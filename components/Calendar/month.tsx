@@ -1,8 +1,8 @@
 "use client"
 
-import React, { useState } from 'react';
+
 import { useCalendarContext } from '@/app/context';
-import { supabase } from '../superbase-client';
+
 
 
 
@@ -10,25 +10,15 @@ import { supabase } from '../superbase-client';
 
 export default function MonthView() {
 //German because calendar will be in german
-const monatsNamen = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "Novembar", "Dezember"];
+
 const weekdays = ["Mo","Di","Mi","Do", "Fr","Sa","So"]; 
 
-const [today] = useState(new Date());
-const {currentEventDate,setCurrentEventDate} = useCalendarContext(); 
+
+const {currentEventDate} = useCalendarContext(); 
 
 
 
 
-
-
-const DaysInMonth= (date: Date): number =>{
-        let tempDate = new Date(date);
-        tempDate.setMonth(tempDate.getMonth()+1);
-        tempDate.setDate(0);
-        return tempDate.getDate();
-    } 
-
-    
     
     //This will return all days that will be visible in the calendar view
     //Includes last month and next month remains to fill the week 
@@ -41,10 +31,10 @@ const DaysInMonth= (date: Date): number =>{
         const dayOneOfMonth = new Date(date.getFullYear(),date.getMonth(),1);
         
         //Get the  difference to the Monday of the current week, +6 and %7 because getDayreturns 0 as Sunday
-        let difToMo = (dayOneOfMonth.getDay() +6 )%7;
+        const difToMo = (dayOneOfMonth.getDay() +6 )%7;
         
         //Create and iterator date for the for loop
-        let itDate = new Date(date);
+        const itDate = new Date(date);
         itDate.setDate(dayOneOfMonth.getDate() - difToMo);
         
         //for loop that goes through 42 days (6 weeks) and safes the new dates to the list
@@ -58,8 +48,7 @@ const DaysInMonth= (date: Date): number =>{
     }
     
     
-    const year = currentEventDate.getFullYear();
-    const month = monatsNamen[currentEventDate.getMonth()];
+    
 
     const dayList = getCalendarDays(currentEventDate);
 
