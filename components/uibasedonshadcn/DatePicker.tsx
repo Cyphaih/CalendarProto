@@ -5,7 +5,7 @@ import { ChevronDownIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
-import { Label } from "@/components/ui/label"
+
 import {
   Popover,
   PopoverContent,
@@ -18,8 +18,8 @@ import { useCalendarContext } from "@/app/context"
 export function DatePicker() {
   const [open, setOpen] = React.useState(false)
   const [date, setDate] = React.useState<Date | undefined>(undefined)
-  const {  currentEventDate,setCurrentEventDate} = useCalendarContext(); 
-  let eMonth = new Date();
+  const { setCurrentEventDate} = useCalendarContext(); 
+  const eMonth = new Date();
   eMonth.setFullYear(2099);
   return (
     <div className="flex flex-col gap-3">

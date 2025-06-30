@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+
 import { useCalendarContext } from '@/app/context';
 
 export default function WeekView(){
@@ -12,7 +12,7 @@ export default function WeekView(){
 
         const difToMo = (date.getDay() + 6)%7;
 
-        let itDate = new Date(date);
+        const itDate = new Date(date);
         itDate.setDate(date.getDate() - difToMo);
 
         for(let i = 0; i < 7; i++){
@@ -26,7 +26,7 @@ export default function WeekView(){
     
     const {currentEventDate} = useCalendarContext(); 
     const week = getWeek(currentEventDate);
-    const [today] = useState(new Date());
+   
     const hourspday = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
    
 

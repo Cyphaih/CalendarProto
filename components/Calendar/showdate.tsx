@@ -3,7 +3,7 @@ import { useCalendarContext } from "@/app/context";
 
 export function ShowDate(){
     const monatsNamen = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "Novembar", "Dezember"]
-    const {  currentEventDate,setCurrentEventDate} = useCalendarContext(); 
+    const {  currentEventDate} = useCalendarContext(); 
 
     const year = currentEventDate.getFullYear();
     const month = monatsNamen[currentEventDate.getMonth()];

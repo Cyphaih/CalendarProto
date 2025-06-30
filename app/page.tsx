@@ -1,11 +1,7 @@
 
-
-import MonthView from "@/components/Calendar/month";
-import WeekView from "@/components/Calendar/week";
 import { DatePicker } from "@/components/uibasedonshadcn/DatePicker";
 import { AppointmentDialogue } from "@/components/uibasedonshadcn/AppointmentDialogue";
 import { TerminFilterDropDown } from "@/components/uibasedonshadcn/TerminFilter";
-
 import { ToggleGroupSingle } from "@/components/uibasedonshadcn/ToggleGroupSingle";
 import { ShowDate } from "@/components/Calendar/showdate";
 import { ConditionalDisplay } from "@/components/Calendar/conditionaldisplay";

@@ -5,13 +5,13 @@ import { ListView } from './list';
 import MonthView from './month';
 import WeekView from './week';
 
-type CalendarView = 'list' | 'month' | 'week';
+
 
 
 
 
 export function ConditionalDisplay() {
-  const { currentView, setCurrentView } = useCalendarContext(); 
+  const { currentView} = useCalendarContext(); 
 
   return (
     <div className='mx-80 '>

@@ -1,5 +1,4 @@
 "use client"
-import { UUID } from "crypto"
 import { supabase } from "../superbase-client"
 import { useState, useEffect  } from "react"
 

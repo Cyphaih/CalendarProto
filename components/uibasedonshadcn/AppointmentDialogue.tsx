@@ -23,7 +23,7 @@ export function AppointmentDialogue() {
   const[selectedDate,setSelectedDate] = useState(new Date());
   const[newAct, setNewAct] = useState({title: "", notes: "",start: selectedDate})
 
-  const handleSubmit = async (e: any) =>{
+  const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) =>{
     e.preventDefault()
     newAct.start = selectedDate;
     console.log(selectedDate);

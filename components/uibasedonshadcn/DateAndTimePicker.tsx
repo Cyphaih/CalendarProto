@@ -24,7 +24,7 @@ export function DateAndTimePicker({onDateTimeChange}:dateAndTimeCallBack) {
   const [date, setDate] = useState<Date | undefined>(undefined)
   const [selectedTime, setTime] = useState("00:00:00");
 
-  let appDate = new Date();
+  
 
 
 
@@ -39,8 +39,6 @@ export function DateAndTimePicker({onDateTimeChange}:dateAndTimeCallBack) {
 
       combinedDateTime = new Date(date); // Start with the selected date
       combinedDateTime.setHours(hours, minutes, 0, 0); // Set hours and minutes
-      appDate = new Date(combinedDateTime);
-      console.log(appDate);
       onDateTimeChange(combinedDateTime)
     }
     
@@ -51,9 +49,9 @@ export function DateAndTimePicker({onDateTimeChange}:dateAndTimeCallBack) {
     
   };
   
-  useEffect(setAppDate,[selectedTime,date]);
+  useEffect(setAppDate,[selectedTime,date,onDateTimeChange]);
 
-  let eMonth = new Date();
+  const eMonth = new Date();
   eMonth.setFullYear(2099);
 
   return (
