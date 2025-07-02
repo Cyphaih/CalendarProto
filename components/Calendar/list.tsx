@@ -28,11 +28,6 @@ export function ListView() {
   const { error, data } =await supabase.from("appointments").select("*").order("start",{ascending: true})
 
   
-  
- 
- 
-  
-
   if(error){
     console.error("Error reading data", error);
     return;
@@ -63,7 +58,7 @@ export function ListView() {
   
 
   return (
-    <div className="m-8 h-[600]  rounded-lg overflow-y-scroll">
+    <div className="m-8  rounded-lg overflow-y-scroll">
       <h2 className="text-2xl font-bold mb-4">Aktivitäten</h2>
       <div className="grid-cols-1 grid-rows-auto space-y-4">
         {acts.map((act, actIndex) => (

@@ -14,7 +14,7 @@ export function ConditionalDisplay() {
   const { currentView} = useCalendarContext(); 
 
   return (
-    <div className='mx-80 '>
+    <div>
       {currentView === 'list' && <ListView />}
       {currentView === 'month' && <MonthView />}
       {currentView=== 'week' && <WeekView />}
